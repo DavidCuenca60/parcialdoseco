@@ -5,6 +5,7 @@ import "dotenv/config"
 
 import { AuthRouter } from "./routes/auth/auth.router"
 import { GameRouter } from "./routes/game/game.router"
+import { Socket } from "socket.io"
 
 const app = express()
 app.use(cors())
@@ -20,5 +21,6 @@ app.get("/", (_req: Request, res: Response) => {
 const rawServer = createServer(app)
 
 rawServer.listen(8080, () => {
+    Socket
     console.log("Server running on port 8080")
 })
